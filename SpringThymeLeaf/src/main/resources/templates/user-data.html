@@ -1,0 +1,28 @@
+<html xmlns:th="https://thymeleaf.org">  
+<head>
+<link href = "css/styles.css" rel = "stylesheet"/>
+<script src="js/functions.js"></script>
+</head>
+    <table>  
+        <tr>  
+            <td><h4>User Name: </h4></td>  
+            <td><h4 th:text="${user.name}"></h4></td>  
+            <td><input type="hidden" id="userName" name="userName" th:value="${user.name}"></input></td>
+        </tr>  
+        <tr>  
+            <td><h4>Email ID: </h4></td>  
+            <td><h4 th:text="${user.email}"></h4></td>  
+        </tr>
+         <tr>  
+            <td>
+            <button onClick='callFunc()'>Click for Alert</button>
+            </td>
+        </tr>
+    </table>
+    <script>
+    function callFunc(){
+    	var value = document.getElementById("userName").value;
+    	sayHello(value);
+    }
+    </script>
+</html>
